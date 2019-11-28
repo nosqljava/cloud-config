@@ -1,0 +1,30 @@
+mybatis:
+    configuration:
+        map-underscore-to-camel-case: true
+
+logging:
+    config: 
+        classpath:logback-${spring.profiles.active}.xml
+---
+spring:
+    profiles: dev
+    datasource:
+          hikari:
+            driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+            jdbc-url: jdbc:log4jdbc:mysql://localhost:3306/javadb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+            username: javauser
+            password: 1234
+    thymeleaf:
+        cache: false
+    resources:
+        cache:
+            period: 0  
+---
+spring:
+    profiles: production
+    datasource:
+          hikari:
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            jdbc-url: jdbc:mysql://localhost:3306/javadb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+            username: javauser
+            password: 1234
