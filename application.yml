@@ -11,7 +11,7 @@ spring:
     datasource:
           hikari:
             driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-            jdbcurl: jdbc:log4jdbc:mysql://localhost:3306/javadb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+            jdbc-url: jdbc:log4jdbc:mysql://localhost:3306/javadb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
             username: javauser
             password: 1234
     thymeleaf:
